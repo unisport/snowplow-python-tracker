@@ -163,3 +163,29 @@ class Subject(object):
         """
         self.standard_nv_pairs["tnuid"] = nuid
         return self
+
+    @contract
+    def set_session_id(self, sid):
+        """
+            Set the session user ID field
+            This overwrites the sid field set by the collector
+
+            :param sid:            Session user ID
+            :type  sid:            string
+            :rtype:                subject
+        """
+        self.standard_nv_pairs["sid"] = sid
+        return self
+
+    @contract
+    def set_session_idx(self, vid):
+        """
+            Set the index of number of visits that this user_id has made to this domain
+            This overwrites the vid field set by the collector
+
+            :param vid:            Index of number of visits that this user_id has made to this domain
+            :type  vid:            string
+            :rtype:                subject
+        """
+        self.standard_nv_pairs["vid"] = vid
+        return self
